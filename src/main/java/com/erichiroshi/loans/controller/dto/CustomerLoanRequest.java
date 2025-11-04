@@ -9,11 +9,21 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record CustomerLoanRequest(
-        @Min(value = 18) @NotNull Integer age,
-        @NotBlank @CPF String cpf,
-        @NotBlank String name,
-        @Min(value = 1000) @NotNull Double income,
-        @NotBlank String location) {
+        
+        @Min(value = 18) @NotNull 
+        Integer age,
+        
+        @NotBlank @CPF 
+        String cpf,
+        
+        @NotBlank 
+        String name,
+        
+        @Min(value = 1000) @NotNull 
+        Double income,
+        
+        @NotBlank 
+        String location) {
 
     public Customer toCustomer() {
         return new Customer(age, cpf, name, income, location);
