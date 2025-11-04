@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record CustomerLoanRequest(
         @Min(value = 18) @NotNull Integer age,
-        @CPF String cpf,
+        @NotBlank @CPF String cpf,
         @NotBlank String name,
         @Min(value = 1000) @NotNull Double income,
         @NotBlank String location) {
